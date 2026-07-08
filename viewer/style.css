@@ -156,6 +156,7 @@ a:hover { color: var(--text-secondary); }
   gap: 28px;
   align-items: start;
 }
+.content-split > div { min-width: 0; }
 @media (max-width: 900px) {
   .content-split { grid-template-columns: 1fr; }
   .main { padding: 28px 16px; }
