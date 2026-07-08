@@ -152,7 +152,7 @@ a:hover { color: var(--text-secondary); }
 /* Content split */
 .content-split {
   display: grid;
-  grid-template-columns: 1fr 1.3fr 0.9fr;
+  grid-template-columns: 0.85fr 1.5fr 0.85fr;
   gap: 20px;
   align-items: start;
 }
