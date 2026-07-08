@@ -81,12 +81,14 @@ function renderExp(exp, activePartId) {
           <button class="copy-btn" onclick="copyCode(this)" title="Copy code">Copy</button>
           <pre><code class="language-python">${esc(activePart.code)}</code></pre>
         </div>
-        ${imgs ? `
+      </div>
+      ${imgs ? `
+      <div>
         <div class="output-panel">
           <h3>Output</h3>
           <div class="output-grid">${imgs}</div>
-        </div>` : ''}
-      </div>
+        </div>
+      </div>` : ''}
     </div>
   `;
 
