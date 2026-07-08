@@ -2,9 +2,9 @@ import tensorflow as tf
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-# --- step 1: load cifar dataset ---
-cifar = tf.keras.datasets.fashion_mnist
-(x_train_full, y_train_full), (x_test_full, y_test_full) = cifar.load_data()
+# --- step 1: load fashion_mnist dataset ---
+fashion_mnist = tf.keras.datasets.fashion_mnist
+(x_train_full, y_train_full), (x_test_full, y_test_full) = fashion_mnist.load_data()
 
 # --- step 2: combine into single dataset ---
 X = np.concatenate([x_train_full, x_test_full], axis=0)
