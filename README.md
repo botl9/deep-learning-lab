@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="hero.jpeg" alt="Deep Learning Lab" width="600">
+  <img src="hero.jpeg" alt="Deep Learning Lab" width="150">
 </p>
 
 <h3 align="center">Deep Learning Lab Experiments</h3>
