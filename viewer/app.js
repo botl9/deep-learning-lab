@@ -84,6 +84,7 @@ function renderExp(exp, activePartId) {
         <div class="code-panel">
           <div class="code-header">
             <span>${esc(activePart.file)}</span>
+            <button class="copy-btn" onclick="copyCode(this)" title="Copy code">Copy</button>
           </div>
           <pre><code class="language-python">${esc(activePart.code)}</code></pre>
         </div>
@@ -112,6 +113,14 @@ function navigate(hash) {
   window.location.hash = hash;
   const m = hash.match(/^(exp\d+)-?([a-z]?)$/);
   if (m) route(m[1], m[2] || null);
+}
+
+function copyCode(btn) {
+  const code = btn.closest('.code-panel').querySelector('code');
+  navigator.clipboard.writeText(code.textContent).then(() => {
+    btn.textContent = 'Copied';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1500);
+  });
 }
 
 function openModal(src) {
