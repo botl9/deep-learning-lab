@@ -235,13 +235,14 @@ a:hover { color: var(--text-secondary); }
 .code-panel pre code { background: none !important; padding: 0 !important; }
 
 /* Output */
+.output-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.output-hint { font-size: 11px; color: var(--text-tertiary); font-weight: 400; }
 .output-panel h3 {
   font-size: var(--font-size-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-tertiary);
-  margin-bottom: 8px;
 }
 .output-grid { display: grid; gap: 8px; }
 .output-grid img {

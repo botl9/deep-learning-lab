@@ -85,7 +85,10 @@ function renderExp(exp, activePartId) {
       ${imgs ? `
       <div>
         <div class="output-panel">
-          <h3>Output</h3>
+          <div class="output-header">
+            <h3>Output</h3>
+            <span class="output-hint">click to preview</span>
+          </div>
           <div class="output-grid">${imgs}</div>
         </div>
       </div>` : ''}
