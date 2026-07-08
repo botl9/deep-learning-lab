@@ -19,15 +19,15 @@ function renderHome() {
     return `<div class="exp-card" onclick="navigate('${link}')">
       <div class="num">Experiment ${e.num}</div>
       <h3>${esc(e.title)}</h3>
-      <p>${e.dataset ? 'Dataset: ' + esc(e.dataset) : ''}</p>
+      <p>${e.dataset ? esc(e.dataset) : ''}</p>
       ${partsHtml}
     </div>`;
   }).join('');
 
   app.innerHTML = `
-    <div class="home-intro">
-      <h2>12 Experiments</h2>
-      <p>Deep Learning Techniques Lab (U23CS7L1) &mdash; TensorFlow / Keras</p>
+    <div class="home-header">
+      <h2>Experiments</h2>
+      <p>Deep Learning Lab (U23CM7L2) &mdash; TensorFlow / Keras</p>
     </div>
     <div class="home-grid">${cards}</div>
   `;
@@ -43,7 +43,7 @@ function renderExp(exp, activePartId) {
   const tabs = exp.parts.map(p => {
     const pId = `${exp.id}${p.id ? '-' + p.id : ''}`;
     const label = p.id ? p.id.toUpperCase() : p.name;
-    return `<div class="tab ${p.id === activePart.id ? 'active' : ''}" onclick="navigate('${pId}')">${esc(label)}</div>`;
+    return `<button class="tab ${p.id === activePart.id ? 'active' : ''}" onclick="navigate('${pId}')">${esc(label)}</button>`;
   }).join('');
 
   const images = activePart.images || (activePart.image ? [activePart.image] : []);
@@ -52,11 +52,7 @@ function renderExp(exp, activePartId) {
   ).join('');
 
   app.innerHTML = `
-    <div class="breadcrumb">
-      <a href="#" onclick="event.preventDefault();navigate('')">Home</a>
-      <span class="sep">/</span>
-      <span>Experiment ${exp.num} &mdash; ${esc(exp.title)}</span>
-    </div>
+    <button class="back-btn" onclick="navigate('')">← Back</button>
 
     <div class="exp-header">
       <h2>${esc(exp.title)}</h2>
@@ -82,10 +78,7 @@ function renderExp(exp, activePartId) {
       </div>
       <div>
         <div class="code-panel">
-          <div class="code-header">
-            <span>${esc(activePart.file)}</span>
-            <button class="copy-btn" onclick="copyCode(this)" title="Copy code">Copy</button>
-          </div>
+          <button class="copy-btn" onclick="copyCode(this)" title="Copy code">Copy</button>
           <pre><code class="language-python">${esc(activePart.code)}</code></pre>
         </div>
         ${imgs ? `
