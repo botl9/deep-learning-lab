@@ -24,8 +24,6 @@ model.compile(
     metrics=['accuracy']
 )
 
-model.summary()
-
 model.fit(
     x_train, y_train,
     epochs=5,
