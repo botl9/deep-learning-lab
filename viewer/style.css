@@ -138,6 +138,7 @@ a:hover { color: var(--text-secondary); }
   font-weight: 450;
   color: var(--text-tertiary);
   cursor: pointer;
+  border: none;
   border-bottom: 1px solid transparent;
   margin-bottom: -1px;
   transition: color var(--transition), border-color var(--transition);
